@@ -23,10 +23,19 @@ http://www.springframework.org/schema/beans ">
     initialization:在bean的所有必需的属性被容器设置之后，调用回调方法。
     destruction :当包含该 bean 的容器被销毁时，使用回调方法。
     为了定义安装和拆卸一个bean，我们只要声明带有init-method和/或destroy-method 参数的。init-method 属性指定一个方法，在实例化bean时，立即调用该方法。同样，
-    destroy-method 指定一个方法，只有从容器中移除 bean 之后，才能调用该方法。
+    destroy-method 指定一个方法，只有从容器中移除bean之后，才能调用该方法。
+    Bean定义继承
+    bean定义可以包含很多的配置信息，包括构造函数的参数，属性值，容器的具体信息例如初始化方法，静态工厂方法名，等等。
+    子bean的定义继承父定义的配置数据。子定义可以根据需要重写一些值，或者添加其他值。
+    Spring Bean定义的继承与Java类的继承无关，但是继承的概念是一样的。你可以定义一个父bean的定义作为模板和其他子bean就可以从父bean中继承所需的配置。
+    当你使用基于XML的配置元数据时，通过使用父属性，指定父 bean 作为该属性的值来表明子bean的定义。
 -->
     <bean id="helloWorld" class="com.zr.HelloWorld"  init-method="init" destroy-method="destroy">
         <property name="message" value="Hello World!"/>
     </bean>
+    <bean id="helloIndia" class="com.zr.HelloIndia" parent="helloWorld">
+        <property name="message" value=""/>
+    </bean>
+    <bean class="com.zr.InitHelloWorld"/>
 
 </beans>
