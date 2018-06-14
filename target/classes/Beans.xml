@@ -8,8 +8,23 @@ http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans ">
-
-    <bean id="helloWorld" class="com.zr.HelloWorld">
+<!--
+    https://www.w3cschool.cn/wkspring/xypt1icg.html
+    被称作bean的对象是构成应用程序的支柱也是由Spring IoC容器管理的。
+    bean是一个被实例化，组装，并通过Spring IoC容器所管理的对象。这些bean是由用容器提供的配置元数据创建的。
+    class:强制属性，用于指定创建的Bean类。
+    id/name:标示符。
+    scope:bean对象的作用域。
+    [singleton:当一个bean的作用域为Singleton，那么Spring IoC容器中只会存在一个共享的bean实例，并且所有对bean的请求，只要id与该bean定义相匹配，则只会返回bean的同一实例。]
+    [prototype:Prototype是原型类型，它在我们创建容器的时候并没有实例化，而是当我们获取bean的时候才会去创建一个对象，而且我们每次获取到的对象都不是同一个对象]
+    constructor-arg，properties，autowiring mode:注入依赖关系。
+    lazy-initialization mode:延迟初始化的bean告诉IoC容器在它第一次被请求时，而不是在启动时去创建一个bean实例。
+    initialization:在bean的所有必需的属性被容器设置之后，调用回调方法。
+    destruction :当包含该 bean 的容器被销毁时，使用回调方法。
+    为了定义安装和拆卸一个bean，我们只要声明带有init-method和/或destroy-method 参数的。init-method 属性指定一个方法，在实例化bean时，立即调用该方法。同样，
+    destroy-method 指定一个方法，只有从容器中移除 bean 之后，才能调用该方法。
+-->
+    <bean id="helloWorld" class="com.zr.HelloWorld"  init-method="init" destroy-method="destroy">
         <property name="message" value="Hello World!"/>
     </bean>
 

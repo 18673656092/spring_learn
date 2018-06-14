@@ -26,10 +26,11 @@ public class MainApp {
           第二步利用第一步生成的bean工厂对象的getBean()方法得到所需要的 bean。这个方法通过配置文件中
           的bean ID返回一个真正的对象，该对象最后可以用于实际的对象。一旦得到这个对象，就可以利用这个
           对象来调用任何方法。*/
-        XmlBeanFactory factory = new XmlBeanFactory(new ClassPathResource("Beans.xml"));
+//        XmlBeanFactory factory = new XmlBeanFactory(new ClassPathResource("Beans.xml"));
         HelloWorld obj = (HelloWorld) context.getBean("helloWorld");
-        HelloWorld obj2 = (HelloWorld) factory.getBean("helloWorld");
+//        HelloWorld obj2 = (HelloWorld) factory.getBean("helloWorld");
         obj.getMessage();
-        obj2.getMessage();
+//        obj2.getMessage();
+        ((ClassPathXmlApplicationContext) context).registerShutdownHook();
     }
 }
