@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans ">
+<!--
+    被称作bean的对象是构成应用程序的支柱也是由Spring IoC容器管理的。
+    bean是一个被实例化，组装，并通过Spring IoC容器所管理的对象。这些bean是由用容器提供的配置元数据创建的。
+    class:强制属性，用于指定创建的Bean类。
+    id/name:标示符。
+    scope:bean对象的作用域。
+    [singleton:当一个bean的作用域为Singleton，那么Spring IoC容器中只会存在一个共享的bean实例，并且所有对bean的请求，只要id与该bean定义相匹配，则只会返回bean的同一实例。]
+
+    constructor-arg，properties，autowiring mode:注入依赖关系。
+    lazy-initialization mode:延迟初始化的bean告诉IoC容器在它第一次被请求时，而不是在启动时去创建一个bean实例。
+    initialization:在bean的所有必需的属性被容器设置之后，调用回调方法。
+    destruction :当包含该 bean 的容器被销毁时，使用回调方法。
+-->
+    <bean id="helloWorld" class="com.zr.HelloWorld">
+        <property name="message" value="Hello World!"/>
+    </bean>
+
+</beans>
