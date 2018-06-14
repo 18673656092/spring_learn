@@ -33,8 +33,10 @@ http://www.springframework.org/schema/beans ">
     <bean id="helloWorld" class="com.zr.HelloWorld"  init-method="init" destroy-method="destroy">
         <property name="message" value="Hello World!"/>
     </bean>
+
     <bean id="helloIndia" class="com.zr.HelloIndia" parent="helloWorld">
         <property name="message" value=""/>
+        <property name="iMessage" value="Hello"/>
     </bean>
     <bean class="com.zr.InitHelloWorld"/>
 

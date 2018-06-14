@@ -13,14 +13,14 @@ ApplicationContext会自动检测由BeanPostProcessor接口的实现定义的 be
 */
 public class InitHelloWorld implements BeanPostProcessor {
    public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-      HelloWorld helloWorld = (HelloWorld) bean;
-      ((HelloWorld) bean).setMessage("Hello Java!");
+//      HelloWorld helloWorld = (HelloWorld) bean;
+//      ((HelloWorld) bean).setMessage("Hello Java!");
       System.out.println("BeforeInitialization : " + beanName);
       return bean;  // you can return any other object as well
    }
    public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-      HelloWorld helloWorld = (HelloWorld) bean;
-      ((HelloWorld) bean).setMessage("Hello Scala!");
+//      HelloWorld helloWorld = (HelloWorld) bean;
+//      ((HelloWorld) bean).setMessage("Hello Scala!");
       System.out.println("AfterInitialization : " + beanName);
       return bean;  // you can return any other object as well
    }

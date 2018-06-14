@@ -28,8 +28,11 @@ public class MainApp {
           对象来调用任何方法。*/
 //        XmlBeanFactory factory = new XmlBeanFactory(new ClassPathResource("Beans.xml"));
         HelloWorld obj = (HelloWorld) context.getBean("helloWorld");
+        HelloIndia helloIndia = (HelloIndia) context.getBean("helloIndia");
 //        HelloWorld obj2 = (HelloWorld) factory.getBean("helloWorld");
         obj.getMessage();
+        helloIndia.getiMessage();
+        helloIndia.getMessage();
 //        obj2.getMessage();
         ((ClassPathXmlApplicationContext) context).registerShutdownHook();
     }
