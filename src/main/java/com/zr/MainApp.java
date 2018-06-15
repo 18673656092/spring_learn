@@ -2,6 +2,7 @@ package com.zr;
 
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 
@@ -27,10 +28,26 @@ public class MainApp {
           的bean ID返回一个真正的对象，该对象最后可以用于实际的对象。一旦得到这个对象，就可以利用这个
           对象来调用任何方法。*/
 //        XmlBeanFactory factory = new XmlBeanFactory(new ClassPathResource("Beans.xml"));
-        HelloWorld obj = (HelloWorld) context.getBean("helloWorld");
+//        HelloWorld obj = (HelloWorld) context.getBean("helloWorld");
+//        HelloIndia helloIndia = (HelloIndia) context.getBean("helloIndia");
 //        HelloWorld obj2 = (HelloWorld) factory.getBean("helloWorld");
-        obj.getMessage();
+//        obj.getMessage();
+//        helloIndia.getMessage();
 //        obj2.getMessage();
-        ((ClassPathXmlApplicationContext) context).registerShutdownHook();
+//        ((ClassPathXmlApplicationContext) context).registerShutdownHook();
+
+//        Student student = (Student) context.getBean("student");
+//        System.out.println("Name : " + student.getName() );
+//        System.out.println("Age : " + student.getAge() );
+//        TextEditor textEditor = (TextEditor) context.getBean("textEditor");
+//        textEditor.spellCheck();
+//        ApplicationContext ctx = new AnnotationConfigApplicationContext(HelloWorldConfig.class);
+//        AnnoHelloWorld annoHelloWorld = ctx.getBean(AnnoHelloWorld.class);
+//        annoHelloWorld.setMessage("Hello World!");
+//        annoHelloWorld.getMessage();
+        Student student = (Student) context.getBean("student");
+        student.getName();
+        student.getAge();
+        student.printThrowException();
     }
 }
