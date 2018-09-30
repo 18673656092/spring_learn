@@ -28,11 +28,12 @@ public class MainApp {
           的bean ID返回一个真正的对象，该对象最后可以用于实际的对象。一旦得到这个对象，就可以利用这个
           对象来调用任何方法。*/
 //        XmlBeanFactory factory = new XmlBeanFactory(new ClassPathResource("Beans.xml"));
-//        HelloWorld obj = (HelloWorld) context.getBean("helloWorld");
-//        HelloIndia helloIndia = (HelloIndia) context.getBean("helloIndia");
+        HelloWorld obj = (HelloWorld) context.getBean("helloWorld");
+        HelloIndia helloIndia = (HelloIndia) context.getBean("helloIndia");
 //        HelloWorld obj2 = (HelloWorld) factory.getBean("helloWorld");
-//        obj.getMessage();
-//        helloIndia.getMessage();
+        obj.getMessage();
+        helloIndia.getiMessage();
+        helloIndia.getMessage();
 //        obj2.getMessage();
 //        ((ClassPathXmlApplicationContext) context).registerShutdownHook();
 

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/aop
+                           http://wwww.springframework.org/schema/aop/spring-aop-4.0.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context-4.0.xsd"
+>
+    <context:component-scan base-package="com.event"/>
+    <context:annotation-config/>
+    <!--<context:property-placeholder location="classpath:jdbc.properties"/>-->
+    <!--<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" p:location="classpath:jdbc.properties" p:fileEncoding="utf-8"/>-->
+    <!--<bean id="admin" class="com.editor.Admin" p:userName="${userName}" p:password="${password}"/>-->
+    <!--<bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">-->
+        <!--<property name="customEditors">-->
+            <!--<map>-->
+                <!--<entry key="com.editor.Car" value="com.editor.CustomCarEditor"/>-->
+            <!--</map>-->
+        <!--</property>-->
+    <!--</bean>-->
+    <!--<bean id="boss" class="com.editor.Boss">-->
+        <!--<property name="name" value="老板"/>-->
+        <!--<property name="car" value="红旗,红色"/>-->
+    <!--</bean>-->
+    <!--<bean id="car" class="com.spring.Car"-->
+          <!--p:brand="雪弗兰"-->
+          <!--p:color="白色"-->
+          <!--scope="prototype"-->
+    <!--/>-->
+    <!--<bean id="magicBoss" class="com.spring.MagicBoss">-->
+        <!--<lookup-method name="getCar" bean="car"/>-->
+    <!--</bean>-->
+    <!--<bean id="boss" class="com.spring.Boss">-->
+    <!--<constructor-arg name="office" value="Office"/>-->
+    <!--</bean>-->
+    <!--<bean id="car" class="com.spring.Car">-->
+    <!--<constructor-arg name="brand" value="悍马"/>-->
+    <!--<constructor-arg name="color" value="黄色"/>-->
+    <!--<constructor-arg name="boss" ref="boss"/>-->
+    <!--</bean>-->
+    <!--<bean id="car" class="com.spring.Car" init-method="initMethod" destroy-method="destroyMethod"-->
+    <!--p:brand=""-->
+    <!--p:color=""-->
+    <!--/>-->
+    <!--<bean id="car" class="com.spring.Car">-->
+    <!--<property name="brand" value="奔驰"/>-->
+    <!--<property name="color" value="黑色"/>-->
+    <!--</bean>-->
+    <!--<bean id="myBeanPostProcessor" class="com.spring.MyBeanPostProcessor"/>-->
+    <!--<bean id="myInstantionAwareBeanPostProcessor" class="com.spring.MyInstantionAwareBeanPostProcessor"/>-->
+    <!--<aop:config>-->
+    <!--<aop:advisor pointcut="" advice-ref=""/>-->
+    <!--</aop:config>-->
+
+</beans>

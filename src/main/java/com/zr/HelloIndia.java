@@ -7,8 +7,8 @@ public class HelloIndia {
     private String message;
     private String iMessage;
 
-    public String getiMessage() {
-        return iMessage;
+    public void getiMessage() {
+        System.out.println("Your iMessage : " + iMessage);
     }
 
     public void setiMessage(String iMessage) {

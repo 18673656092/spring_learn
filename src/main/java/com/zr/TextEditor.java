@@ -2,6 +2,7 @@ package com.zr;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.config.BeanDefinition;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;

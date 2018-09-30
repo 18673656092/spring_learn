@@ -1,101 +1,134 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
 
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:aop="http://www.springframework.org/schema/aop"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-http://www.springframework.org/schema/beans
-http://www.springframework.org/schema/beans
-http://www.springframework.org/schema/beans
-http://www.springframework.org/schema/beans http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
-    <!--
-        https://www.w3cschool.cn/wkspring/xypt1icg.html
+<!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+       <!--xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+       <!--xmlns:context="http://www.springframework.org/schema/context"-->
+       <!--xmlns:aop="http://www.springframework.org/schema/aop"-->
+       <!--xsi:schemaLocation="http://www.springframework.org/schema/beans-->
+    <!--http://www.springframework.org/schema/beans/spring-beans-3.0.xsd-->
+<!--http://www.springframework.org/schema/beans-->
+<!--http://www.springframework.org/schema/beans-->
+<!--http://www.springframework.org/schema/beans-->
+<!--<<<<<<< HEAD-->
+<!--http://www.springframework.org/schema/beans http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">-->
+    <!--&lt;!&ndash;-->
+        <!--https://www.w3cschool.cn/wkspring/xypt1icg.html-->
 
-        被称作bean的对象是构成应用程序的支柱也是由Spring IoC容器管理的。
-        bean是一个被实例化，组装，并通过Spring IoC容器所管理的对象。这些bean是由用容器提供的配置元数据创建的。
-        class:强制属性，用于指定创建的Bean类。
-        id/name:标示符。
-        scope:bean对象的作用域。
-        [singleton:当一个bean的作用域为Singleton，那么Spring IoC容器中只会存在一个共享的bean实例，并且所有对bean的请求，只要id与该bean定义相匹配，则只会返回bean的同一实例。]
-        [prototype:Prototype是原型类型，它在我们创建容器的时候并没有实例化，而是当我们获取bean的时候才会去创建一个对象，而且我们每次获取到的对象都不是同一个对象]
-        constructor-arg，properties，autowiring mode:注入依赖关系。
-        lazy-initialization mode:延迟初始化的bean告诉IoC容器在它第一次被请求时，而不是在启动时去创建一个bean实例。
-        initialization:在bean的所有必需的属性被容器设置之后，调用回调方法。
-        destruction :当包含该 bean 的容器被销毁时，使用回调方法。
-        为了定义安装和拆卸一个bean，我们只要声明带有init-method和/或destroy-method 参数的。init-method 属性指定一个方法，在实例化bean时，立即调用该方法。同样，
-        destroy-method 指定一个方法，只有从容器中移除bean之后，才能调用该方法。
-        Bean定义继承
-        bean定义可以包含很多的配置信息，包括构造函数的参数，属性值，容器的具体信息例如初始化方法，静态工厂方法名，等等。
-        子bean的定义继承父定义的配置数据。子定义可以根据需要重写一些值，或者添加其他值。
-        Spring Bean定义的继承与Java类的继承无关，但是继承的概念是一样的。你可以定义一个父bean的定义作为模板和其他子bean就可以从父bean中继承所需的配置。
-        当你使用基于XML的配置元数据时，通过使用父属性，指定父 bean 作为该属性的值来表明子bean的定义。
-    -->
-    <!--<bean id="helloWorld" class="com.zr.HelloWorld" init-method="init" destroy-method="destroy">-->
-    <!--<property name="message" value="Hello World!"/>-->
+        <!--被称作bean的对象是构成应用程序的支柱也是由Spring IoC容器管理的。-->
+        <!--bean是一个被实例化，组装，并通过Spring IoC容器所管理的对象。这些bean是由用容器提供的配置元数据创建的。-->
+        <!--class:强制属性，用于指定创建的Bean类。-->
+        <!--id/name:标示符。-->
+        <!--scope:bean对象的作用域。-->
+        <!--[singleton:当一个bean的作用域为Singleton，那么Spring IoC容器中只会存在一个共享的bean实例，并且所有对bean的请求，只要id与该bean定义相匹配，则只会返回bean的同一实例。]-->
+        <!--[prototype:Prototype是原型类型，它在我们创建容器的时候并没有实例化，而是当我们获取bean的时候才会去创建一个对象，而且我们每次获取到的对象都不是同一个对象]-->
+        <!--constructor-arg，properties，autowiring mode:注入依赖关系。-->
+        <!--lazy-initialization mode:延迟初始化的bean告诉IoC容器在它第一次被请求时，而不是在启动时去创建一个bean实例。-->
+        <!--initialization:在bean的所有必需的属性被容器设置之后，调用回调方法。-->
+        <!--destruction :当包含该 bean 的容器被销毁时，使用回调方法。-->
+        <!--为了定义安装和拆卸一个bean，我们只要声明带有init-method和/或destroy-method 参数的。init-method 属性指定一个方法，在实例化bean时，立即调用该方法。同样，-->
+        <!--destroy-method 指定一个方法，只有从容器中移除bean之后，才能调用该方法。-->
+        <!--Bean定义继承-->
+        <!--bean定义可以包含很多的配置信息，包括构造函数的参数，属性值，容器的具体信息例如初始化方法，静态工厂方法名，等等。-->
+        <!--子bean的定义继承父定义的配置数据。子定义可以根据需要重写一些值，或者添加其他值。-->
+        <!--Spring Bean定义的继承与Java类的继承无关，但是继承的概念是一样的。你可以定义一个父bean的定义作为模板和其他子bean就可以从父bean中继承所需的配置。-->
+        <!--当你使用基于XML的配置元数据时，通过使用父属性，指定父 bean 作为该属性的值来表明子bean的定义。-->
+    <!--&ndash;&gt;-->
+    <!--&lt;!&ndash;<bean id="helloWorld" class="com.zr.HelloWorld" init-method="init" destroy-method="destroy">&ndash;&gt;-->
+    <!--&lt;!&ndash;<property name="message" value="Hello World!"/>&ndash;&gt;-->
+    <!--&lt;!&ndash;</bean>&ndash;&gt;-->
+    <!--&lt;!&ndash;<bean id="helloIndia" class="com.zr.HelloIndia" parent="helloWorld">&ndash;&gt;-->
+    <!--&lt;!&ndash;<property name="iMessage" value="HAHA"/>&ndash;&gt;-->
+    <!--&lt;!&ndash;</bean>&ndash;&gt;-->
+    <!--&lt;!&ndash;<bean class="com.zr.InitHelloWorld"/>&ndash;&gt;-->
+
+    <!--&lt;!&ndash;开启注解模式&ndash;&gt;-->
+    <!--<context:annotation-config/>-->
+
+    <!--&lt;!&ndash; Definition for student bean &ndash;&gt;-->
+    <!--<bean id="student" class="com.zr.Student">-->
+        <!--<property name="name" value="Zara"/>-->
+        <!--<property name="age" value="11"/>-->
+<!--=======-->
+<!--http://www.springframework.org/schema/beans ">-->
+<!--&lt;!&ndash;-->
+    <!--https://www.w3cschool.cn/wkspring/xypt1icg.html-->
+
+    <!--被称作bean的对象是构成应用程序的支柱也是由Spring IoC容器管理的。-->
+    <!--bean是一个被实例化，组装，并通过Spring IoC容器所管理的对象。这些bean是由用容器提供的配置元数据创建的。-->
+    <!--class:强制属性，用于指定创建的Bean类。-->
+    <!--id/name:标示符。-->
+    <!--scope:bean对象的作用域。-->
+    <!--[singleton:当一个bean的作用域为Singleton，那么Spring IoC容器中只会存在一个共享的bean实例，并且所有对bean的请求，只要id与该bean定义相匹配，则只会返回bean的同一实例。]-->
+    <!--[prototype:Prototype是原型类型，它在我们创建容器的时候并没有实例化，而是当我们获取bean的时候才会去创建一个对象，而且我们每次获取到的对象都不是同一个对象]-->
+    <!--constructor-arg，properties，autowiring mode:注入依赖关系。-->
+    <!--lazy-initialization mode:延迟初始化的bean告诉IoC容器在它第一次被请求时，而不是在启动时去创建一个bean实例。-->
+    <!--initialization:在bean的所有必需的属性被容器设置之后，调用回调方法。-->
+    <!--destruction :当包含该 bean 的容器被销毁时，使用回调方法。-->
+    <!--为了定义安装和拆卸一个bean，我们只要声明带有init-method和/或destroy-method 参数的。init-method 属性指定一个方法，在实例化bean时，立即调用该方法。同样，-->
+    <!--destroy-method 指定一个方法，只有从容器中移除bean之后，才能调用该方法。-->
+    <!--Bean定义继承-->
+    <!--bean定义可以包含很多的配置信息，包括构造函数的参数，属性值，容器的具体信息例如初始化方法，静态工厂方法名，等等。-->
+    <!--子bean的定义继承父定义的配置数据。子定义可以根据需要重写一些值，或者添加其他值。-->
+    <!--Spring Bean定义的继承与Java类的继承无关，但是继承的概念是一样的。你可以定义一个父bean的定义作为模板和其他子bean就可以从父bean中继承所需的配置。-->
+    <!--当你使用基于XML的配置元数据时，通过使用父属性，指定父 bean 作为该属性的值来表明子bean的定义。-->
+<!--&ndash;&gt;-->
+    <!--<bean id="helloWorld" class="com.zr.HelloWorld"  init-method="init" destroy-method="destroy">-->
+        <!--<property name="message" value="Hello World!"/>-->
     <!--</bean>-->
+
     <!--<bean id="helloIndia" class="com.zr.HelloIndia" parent="helloWorld">-->
-    <!--<property name="iMessage" value="HAHA"/>-->
-    <!--</bean>-->
-    <!--<bean class="com.zr.InitHelloWorld"/>-->
-
-    <!--开启注解模式-->
-    <context:annotation-config/>
-
-    <!-- Definition for student bean -->
-    <bean id="student" class="com.zr.Student">
-        <property name="name" value="Zara"/>
-        <property name="age" value="11"/>
-    </bean>
-
-    <!--
-        constructor-arg:spring 构造函数依赖注入
-        直接ref:setter函数依赖注入
-        注入集合:<list>,<set>,<map>,<props>
-    -->
-    <!-- Definition for textEditor bean -->
-    <!--<bean id="textEditor" class="com.zr.TextEditor">-->
-    <!--<constructor-arg ref="spellChecker"/>-->
-    <!--</bean>-->
-    <!-- Definition for spellChecker bean -->
-    <!--<bean id="spellChecker" class="com.zr.SpellChecker">-->
+        <!--<property name="message" value=""/>-->
+        <!--<property name="iMessage" value="Hello"/>-->
+<!--&gt;>>>>>> origin/spring-->
     <!--</bean>-->
 
-    <!--
-        自动装配:
-        1.ByName:在XML配置文件中beans的auto-wire属性设置为byName。然后，它尝试将它的属性与配置文件中定义为相同名称的beans进行匹配和连接。如果找到匹配项，它将注入这些beans，否则，它将抛出异常。
-        2.ByType:在XML配置文件中beans的auto-wire属性设置为byType。然后，如果它的type恰好与配置文件中beans名称中的一个相匹配，它将尝试匹配和连接它的属性。如果找到匹配项，它将注入这些beans，否则，它将抛出异常。
-        3.构造函数:在XML配置文件中beans的auto-wire属性设置为constructor。然后，它尝试把它的构造函数的参数与配置文件中beans名称中的一个进行匹配和连线。如果找到匹配项，它会注入这些bean，否则，它会抛出异常。
-    -->
+    <!--&lt;!&ndash;-->
+        <!--constructor-arg:spring 构造函数依赖注入-->
+        <!--直接ref:setter函数依赖注入-->
+        <!--注入集合:<list>,<set>,<map>,<props>-->
+    <!--&ndash;&gt;-->
+    <!--&lt;!&ndash; Definition for textEditor bean &ndash;&gt;-->
+    <!--&lt;!&ndash;<bean id="textEditor" class="com.zr.TextEditor">&ndash;&gt;-->
+    <!--&lt;!&ndash;<constructor-arg ref="spellChecker"/>&ndash;&gt;-->
+    <!--&lt;!&ndash;</bean>&ndash;&gt;-->
+    <!--&lt;!&ndash; Definition for spellChecker bean &ndash;&gt;-->
+    <!--&lt;!&ndash;<bean id="spellChecker" class="com.zr.SpellChecker">&ndash;&gt;-->
+    <!--&lt;!&ndash;</bean>&ndash;&gt;-->
 
-    <!-- Definition for textEditor bean without constructor-arg  -->
-    <!--<bean id="textEditor" class="com.zr.TextEditor">-->
-    <!--</bean>-->
-    <!--
-        为了监听上下文事件，一个bean应该实现只有一个方法onApplicationEvent()的ApplicationListener接口
-        ContextRefreshedEvent
-        ApplicationContext 被初始化或刷新时，该事件被发布。这也可以在 ConfigurableApplicationContext 接口中使用 refresh() 方法来发生。
-        ContextStartedEvent
-        当使用 ConfigurableApplicationContext 接口中的 start() 方法启动 ApplicationContext 时，该事件被发布。你可以调查你的数据库，或者你可以在接受到这个事件后重启任何停止的应用程序。
-        ContextStoppedEvent
-        当使用 ConfigurableApplicationContext 接口中的 stop() 方法停止 ApplicationContext 时，发布这个事件。你可以在接受到这个事件后做必要的清理的工作。
-        ContextClosedEvent
-        当使用 ConfigurableApplicationContext 接口中的 close() 方法关闭 ApplicationContext 时，该事件被发布。一个已关闭的上下文到达生命周期末端；它不能被刷新或重启。
-        RequestHandledEvent
-        这是一个 web-specific 事件，告诉所有 bean HTTP 请求已经被服务。
-    -->
-    <!--<bean id="cStartEventHandler"-->
-          <!--class="com.zr.CStartEventHandler"/>-->
+    <!--&lt;!&ndash;-->
+        <!--自动装配:-->
+        <!--1.ByName:在XML配置文件中beans的auto-wire属性设置为byName。然后，它尝试将它的属性与配置文件中定义为相同名称的beans进行匹配和连接。如果找到匹配项，它将注入这些beans，否则，它将抛出异常。-->
+        <!--2.ByType:在XML配置文件中beans的auto-wire属性设置为byType。然后，如果它的type恰好与配置文件中beans名称中的一个相匹配，它将尝试匹配和连接它的属性。如果找到匹配项，它将注入这些beans，否则，它将抛出异常。-->
+        <!--3.构造函数:在XML配置文件中beans的auto-wire属性设置为constructor。然后，它尝试把它的构造函数的参数与配置文件中beans名称中的一个进行匹配和连线。如果找到匹配项，它会注入这些bean，否则，它会抛出异常。-->
+    <!--&ndash;&gt;-->
 
-    <!--<bean id="cStopEventHandler"-->
-          <!--class="com.zr.CStopEventHandler"/>-->
+    <!--&lt;!&ndash; Definition for textEditor bean without constructor-arg  &ndash;&gt;-->
+    <!--&lt;!&ndash;<bean id="textEditor" class="com.zr.TextEditor">&ndash;&gt;-->
+    <!--&lt;!&ndash;</bean>&ndash;&gt;-->
+    <!--&lt;!&ndash;-->
+        <!--为了监听上下文事件，一个bean应该实现只有一个方法onApplicationEvent()的ApplicationListener接口-->
+        <!--ContextRefreshedEvent-->
+        <!--ApplicationContext 被初始化或刷新时，该事件被发布。这也可以在 ConfigurableApplicationContext 接口中使用 refresh() 方法来发生。-->
+        <!--ContextStartedEvent-->
+        <!--当使用 ConfigurableApplicationContext 接口中的 start() 方法启动 ApplicationContext 时，该事件被发布。你可以调查你的数据库，或者你可以在接受到这个事件后重启任何停止的应用程序。-->
+        <!--ContextStoppedEvent-->
+        <!--当使用 ConfigurableApplicationContext 接口中的 stop() 方法停止 ApplicationContext 时，发布这个事件。你可以在接受到这个事件后做必要的清理的工作。-->
+        <!--ContextClosedEvent-->
+        <!--当使用 ConfigurableApplicationContext 接口中的 close() 方法关闭 ApplicationContext 时，该事件被发布。一个已关闭的上下文到达生命周期末端；它不能被刷新或重启。-->
+        <!--RequestHandledEvent-->
+        <!--这是一个 web-specific 事件，告诉所有 bean HTTP 请求已经被服务。-->
+    <!--&ndash;&gt;-->
+    <!--&lt;!&ndash;<bean id="cStartEventHandler"&ndash;&gt;-->
+          <!--&lt;!&ndash;class="com.zr.CStartEventHandler"/>&ndash;&gt;-->
 
-    <!--
-        AOP注解开启
-    -->
-    <aop:aspectj-autoproxy/>
+    <!--&lt;!&ndash;<bean id="cStopEventHandler"&ndash;&gt;-->
+          <!--&lt;!&ndash;class="com.zr.CStopEventHandler"/>&ndash;&gt;-->
 
-    <bean id="logging" class="com.zr.Logging"/>
+    <!--&lt;!&ndash;-->
+        <!--AOP注解开启-->
+    <!--&ndash;&gt;-->
+    <!--<aop:aspectj-autoproxy/>-->
 
-</beans>
+    <!--<bean id="logging" class="com.zr.Logging"/>-->
+
+<!--</beans>-->
